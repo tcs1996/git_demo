@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name></display-name>
+
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>com.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/main/*</url-pattern> <!--在web下新建一个main文件夹，里面用来存放需要进行
+
+权限验证的界面，登陆界面或者注册界面不要放在此文件夹下，这样就能实现不对登陆界面和注册界面进行验
+
+证-->
+
+  </filter-mapping>
   
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>

@@ -1,4 +1,4 @@
-package com.itheima.util;
+package com.itheima.utils;
 
 import org.apache.ibatis.session.SqlSession;
 

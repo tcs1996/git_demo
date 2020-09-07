@@ -1,4 +1,4 @@
-package com.itheima.util;
+package com.itheima.utils;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 
@@ -11,19 +11,19 @@ import java.sql.Statement;
 import java.util.Properties;
 
 /**
- * DruidÁ¬½Ó³ØµÄ¹¤¾ßÀà
+ * Druidï¿½ï¿½ï¿½Ó³ØµÄ¹ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 public class JDBCUtils {
 
-    //1.¶¨Òå³ÉÔ±±äÁ¿ DataSource
+    //1.ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ DataSource
     private static DataSource ds;
 
     static {
         try {
-            //1.¼ÓÔØÅäÖÃÎÄ¼þ
+            //1.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
             Properties pro = new Properties();
             pro.load(JDBCUtils.class.getClassLoader().getResourceAsStream("druid.properties"));
-            //2.»ñÈ¡DataSource
+            //2.ï¿½ï¿½È¡DataSource
             ds = DruidDataSourceFactory.createDataSource(pro);
         } catch (IOException e) {
             e.printStackTrace();
@@ -33,14 +33,14 @@ public class JDBCUtils {
     }
 
     /**
-     * »ñÈ¡Á¬½Ó
+     * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
      */
     public static Connection getConnection() throws SQLException {
         return ds.getConnection();
     }
 
     /**
-     * ÊÍ·Å×ÊÔ´
+     * ï¿½Í·ï¿½ï¿½ï¿½Ô´
      */
     public static void close(Statement stmt, Connection conn) {
         close(null, stmt, conn);
@@ -69,7 +69,7 @@ public class JDBCUtils {
 
         if (conn != null) {
             try {
-                conn.close();//¹é»¹Á¬½Ó
+                conn.close();//ï¿½é»¹ï¿½ï¿½ï¿½ï¿½
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -77,7 +77,7 @@ public class JDBCUtils {
     }
 
     /**
-     * »ñÈ¡Á¬½Ó³Ø·½·¨
+     * ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ó³Ø·ï¿½ï¿½ï¿½
      */
 
     public static DataSource getDataSource() {
